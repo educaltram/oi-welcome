@@ -6,1023 +6,32 @@
   <title>Eduardo Caltram — Psicanálise, Brasilidades & Clínica</title>
   <meta name="description" content="Inconstância Mental — Plataforma autoral de Eduardo Caltram (Psicólogo Clínico e Psicanalista — CRP 06/189584). Clínica psicanalítica online, brasilidades, gênero, grupos de leitura e ensaios." />
 
-  <!-- Open Graph / Social Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="Eduardo Caltram — Inconstância Mental · Psicanálise & Brasilidades" />
   <meta property="og:description" content="A psicanálise em contrapelo: clínica online, brasilidades, relações de gênero, Clube de Leitura Desassossego e caderno de escritos." />
 
-  <!-- Inline SVG Favicon (Nanquim + Terracota) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230D0D0D'/%3E%3Crect x='4' y='4' width='56' height='56' fill='none' stroke='%23A64B2A' stroke-width='2'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23F6F3EC' font-family='Georgia, serif' font-weight='bold' font-size='26'%3EEC%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-paper: #F6F3EC;
-      --bg-paper-alt: #EDE8DD;
-      --ink-dark: #1C1B1A;
-      --ink-black: #0D0D0D;
-      --ink-muted: #57534E;
-      --accent-terracotta: #A64B2A;
-      --border-subtle: rgba(28, 27, 26, 0.16);
-      --border-strong: rgba(28, 27, 26, 0.45);
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg-paper);
-      color: var(--ink-dark);
-      font-family: var(--font-sans);
-      line-height: 1.65;
-    }
-
-    body {
-      background-color: var(--bg-paper);
-      background-image: radial-gradient(rgba(28, 27, 26, 0.045) 1px, transparent 0);
-      background-size: 24px 24px;
-      overflow-x: hidden;
-    }
-
-    section[id] {
-      scroll-margin-top: 78px;
-    }
-
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 0%;
-      background: var(--accent-terracotta);
-      z-index: 1000;
-      transition: width 0.1s ease-out;
-    }
-
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header & Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 900;
-      background-color: rgba(246, 243, 236, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      gap: 16px;
-    }
-
-    .brand {
-      text-decoration: none;
-      color: var(--ink-black);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.72rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.05;
-    }
-
-    .brand-sub {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--ink-muted);
-      letter-spacing: 0.04em;
-      margin-top: 3px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 24px;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--ink-dark);
-      font-size: 0.88rem;
-      font-weight: 500;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    nav a:hover,
-    nav a.active-link {
-      color: var(--accent-terracotta);
-      border-bottom-color: var(--accent-terracotta);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: 1px solid var(--border-strong);
-      padding: 6px 12px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      cursor: pointer;
-      color: var(--ink-black);
-    }
-
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent-terracotta);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .hatch-mark {
-      display: inline-block;
-      width: 28px;
-      height: 10px;
-      background: repeating-linear-gradient(
-        -55deg,
-        var(--ink-black),
-        var(--ink-black) 1.5px,
-        transparent 1.5px,
-        transparent 4.5px
-      );
-    }
-
-    .hatch-mark-light {
-      display: inline-block;
-      width: 28px;
-      height: 10px;
-      background: repeating-linear-gradient(
-        -55deg,
-        #E89274,
-        #E89274 1.5px,
-        transparent 1.5px,
-        transparent 4.5px
-      );
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      color: var(--ink-black);
-      line-height: 1.12;
-    }
-
-    /* Quadrante 2: Limiar / Hero */
-    .hero {
-      padding: 64px 0 76px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.22fr 0.92fr;
-      gap: 44px;
-      align-items: start;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 4.4vw, 3.8rem);
-      letter-spacing: -0.025em;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent-terracotta);
-      font-weight: 600;
-    }
-
-    .manifesto-lead {
-      font-size: 1.1rem;
-      color: var(--ink-dark);
-      max-width: 60ch;
-      margin-bottom: 30px;
-      border-left: 3px solid var(--ink-black);
-      padding-left: 20px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 22px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: 1px solid var(--ink-black);
-    }
-
-    .btn-primary {
-      background-color: var(--ink-black);
-      color: var(--bg-paper);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--accent-terracotta);
-      border-color: var(--accent-terracotta);
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: var(--ink-black);
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--ink-black);
-      color: var(--bg-paper);
-    }
-
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .hero-portrait-frame {
-      border: 1px solid var(--ink-black);
-      padding: 10px;
-      background-color: var(--bg-paper-alt);
-    }
-
-    .hero-portrait-box {
-      aspect-ratio: 4 / 3;
-      width: 100%;
-      background-color: #1E1D1B;
-      border-bottom: 2px solid var(--accent-terracotta);
-      overflow: hidden;
-    }
-
-    .hero-portrait-img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center 20%;
-      filter: grayscale(100%) contrast(116%);
-    }
-
-    .hero-portrait-caption {
-      padding: 12px 4px 2px;
-      font-size: 0.85rem;
-      color: var(--ink-dark);
-      line-height: 1.5;
-    }
-
-    .hero-portrait-caption strong {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      color: var(--ink-black);
-    }
-
-    .radar-card {
-      background-color: var(--ink-black);
-      color: var(--bg-paper);
-      padding: 22px 24px;
-      border-left: 4px solid var(--accent-terracotta);
-      box-shadow: 8px 8px 0px rgba(166, 75, 42, 0.22);
-    }
-
-    .radar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(246, 243, 236, 0.16);
-      padding-bottom: 10px;
-      margin-bottom: 14px;
-    }
-
-    .radar-badge {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #E89274;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .pulse-dot {
-      width: 7px;
-      height: 7px;
-      background-color: #E89274;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .radar-item {
-      padding: 10px 0;
-      border-bottom: 1px dashed rgba(246, 243, 236, 0.18);
-    }
-
-    .radar-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .radar-tag {
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      color: rgba(246, 243, 236, 0.65);
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .radar-item h3 {
-      color: var(--bg-paper);
-      font-size: 1.12rem;
-      margin-bottom: 3px;
-    }
-
-    .radar-item p {
-      font-size: 0.83rem;
-      color: rgba(246, 243, 236, 0.82);
-    }
-
-    .fracture-line {
-      height: 18px;
-      width: 100%;
-      background-image: linear-gradient(135deg, var(--ink-black) 25%, transparent 25%),
-                        linear-gradient(225deg, var(--ink-black) 25%, transparent 25%);
-      background-position: 0 0;
-      background-size: 16px 18px;
-      opacity: 0.12;
-    }
-
-    /* A Clínica & A Escuta (Bloco Nanquim 1 com Borda Dupla Editorial) */
-    .clinic-section {
-      background-color: var(--ink-black);
-      color: var(--bg-paper);
-      padding: 84px 0;
-      position: relative;
-      border-top: 3px solid var(--accent-terracotta);
-      border-bottom: 3px solid var(--accent-terracotta);
-    }
-
-    .clinic-section .eyebrow {
-      color: #E89274;
-    }
-
-    .clinic-section h2 {
-      color: var(--bg-paper);
-      font-size: clamp(2.1rem, 3.6vw, 3rem);
-      margin-bottom: 20px;
-    }
-
-    .clinic-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .clinic-text p {
-      color: rgba(246, 243, 236, 0.86);
-      font-size: 1.02rem;
-      margin-bottom: 18px;
-    }
-
-    .clinic-pillars {
-      border: 1px solid rgba(246, 243, 236, 0.2);
-      padding: 28px;
-      background-color: rgba(255, 255, 255, 0.03);
-    }
-
-    .clinic-pillars h3 {
-      color: var(--bg-paper);
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-      border-bottom: 1px solid rgba(246, 243, 236, 0.15);
-      padding-bottom: 10px;
-    }
-
-    .pillar-list {
-      list-style: none;
-    }
-
-    .pillar-list li {
-      margin-bottom: 14px;
-      font-size: 0.92rem;
-      color: rgba(246, 243, 236, 0.85);
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .pillar-list li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: #E89274;
-    }
-
-    /* Standard Sections */
-    .section {
-      padding: 80px 0;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    /* Papel Envelhecido em Encruzilhadas & Transmissão */
-    .section-aged {
-      background-color: var(--bg-paper-alt);
-      border-bottom: 1px solid var(--border-strong);
-    }
-
-    .section-header {
-      max-width: 740px;
-      margin-bottom: 40px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(2rem, 3.5vw, 2.85rem);
-      margin-bottom: 14px;
-    }
-
-    .section-header p {
-      color: var(--ink-muted);
-      font-size: 1.02rem;
-    }
-
-    /* Encruzilhadas & Transmissão */
-    .tabs-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      border-bottom: 1px solid var(--border-strong);
-      margin-bottom: 32px;
-    }
-
-    .tab-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      border-bottom: none;
-      padding: 12px 20px;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      color: var(--ink-muted);
-      transition: all 0.2s;
-    }
-
-    .tab-btn.active {
-      background-color: var(--ink-black);
-      color: var(--bg-paper);
-    }
-
-    .tab-btn:hover:not(.active) {
-      color: var(--ink-black);
-      border-color: var(--border-subtle);
-    }
-
-    .tab-panel {
-      display: none;
-    }
-
-    .tab-panel.active {
-      display: block;
-    }
-
-    .clube-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 36px;
-      background-color: var(--bg-paper);
-      padding: 36px;
-      border: 1px solid var(--border-strong);
-    }
-
-    .clube-info h3 {
-      font-size: 1.85rem;
-      margin-bottom: 12px;
-    }
-
-    .clube-meta {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: var(--accent-terracotta);
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .clube-info p {
-      margin-bottom: 16px;
-      font-size: 0.96rem;
-    }
-
-    .itinerary-box {
-      background-color: var(--bg-paper-alt);
-      border: 1px solid var(--border-strong);
-      padding: 24px;
-    }
-
-    .itinerary-box h4 {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .itinerary-step {
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.88rem;
-    }
-
-    .itinerary-step:last-child {
-      border-bottom: none;
-    }
-
-    .status-pill {
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      padding: 2px 7px;
-      margin-right: 6px;
-      text-transform: uppercase;
-    }
-
-    .status-done {
-      background: rgba(28, 27, 26, 0.1);
-      color: var(--ink-muted);
-    }
-
-    .status-next {
-      background: var(--accent-terracotta);
-      color: var(--bg-paper);
-    }
-
-    .status-soon {
-      background: rgba(166, 75, 42, 0.15);
-      color: var(--accent-terracotta);
-      font-weight: 500;
-    }
-
-    .cards-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .editorial-card {
-      background-color: var(--bg-paper);
-      border: 1px solid var(--border-strong);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .editorial-card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 10px;
-    }
-
-    .editorial-card p {
-      font-size: 0.92rem;
-      color: var(--ink-dark);
-      margin-bottom: 18px;
-    }
-
-    .biblio-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .biblio-item {
-      border-left: 2px solid var(--accent-terracotta);
-      padding: 14px 18px;
-      background-color: var(--bg-paper);
-      border-top: 1px solid var(--border-subtle);
-      border-right: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .biblio-item strong {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      display: block;
-    }
-
-    .biblio-item span {
-      font-size: 0.88rem;
-      color: var(--ink-muted);
-    }
-
-    /* Caderno de Escritos, Ensaios & Fragmentos */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .filter-btn {
-      background: transparent;
-      border: 1px solid var(--border-strong);
-      padding: 7px 14px;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      cursor: pointer;
-      color: var(--ink-dark);
-      transition: all 0.2s;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background-color: var(--accent-terracotta);
-      border-color: var(--accent-terracotta);
-      color: var(--bg-paper);
-    }
-
-    .essays-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    .essay-card {
-      border: 1px solid var(--border-subtle);
-      background-color: var(--bg-paper);
-      padding: 30px;
-      transition: transform 0.2s, border-color 0.2s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .essay-card:hover {
-      border-color: var(--ink-black);
-      transform: translateY(-2px);
-    }
-
-    .essay-card.fragment-style {
-      background-color: var(--bg-paper-alt);
-      border-left: 3px solid var(--ink-black);
-    }
-
-    .essay-meta {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--accent-terracotta);
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .essay-card h3 {
-      font-size: 1.55rem;
-      margin-bottom: 12px;
-    }
-
-    .essay-excerpt {
-      font-size: 0.94rem;
-      color: var(--ink-muted);
-      margin-bottom: 20px;
-    }
-
-    .read-trigger {
-      background: none;
-      border: none;
-      border-bottom: 1px solid var(--ink-black);
-      padding-bottom: 3px;
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      cursor: pointer;
-      color: var(--ink-black);
-      align-self: flex-start;
-      text-decoration: none;
-    }
-
-    .read-trigger:hover {
-      color: var(--accent-terracotta);
-      border-color: var(--accent-terracotta);
-    }
-
-    /* Travessia & Contato em Nanquim */
-    .closing-section {
-      background-color: var(--ink-black);
-      color: var(--bg-paper);
-      padding: 84px 0 64px;
-      border-top: 3px solid var(--accent-terracotta);
-    }
-
-    .closing-grid {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 44px;
-      align-items: start;
-    }
-
-    .closing-section .eyebrow {
-      color: #E89274;
-    }
-
-    .bio-content h3 {
-      color: var(--bg-paper);
-      font-size: 2.1rem;
-      margin-bottom: 8px;
-    }
-
-    .crp-tag {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: #E89274;
-      display: block;
-      margin-bottom: 18px;
-    }
-
-    .bio-content p {
-      color: rgba(246, 243, 236, 0.85);
-      margin-bottom: 16px;
-      font-size: 0.98rem;
-    }
-
-    .contact-box {
-      background-color: var(--bg-paper);
-      color: var(--ink-dark);
-      border: 1px solid rgba(246, 243, 236, 0.35);
-      padding: 32px;
-      box-shadow: 10px 10px 0px rgba(166, 75, 42, 0.28);
-    }
-
-    .contact-box .eyebrow {
-      color: var(--accent-terracotta);
-    }
-
-    .contact-box h3 {
-      color: var(--ink-black);
-    }
-
-    .intent-selector {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin: 18px 0 20px;
-    }
-
-    .intent-btn {
-      padding: 12px 14px;
-      border: 1px solid var(--border-strong);
-      background-color: var(--bg-paper-alt);
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .intent-btn.active {
-      background-color: var(--ink-black);
-      color: var(--bg-paper);
-      border-color: var(--ink-black);
-    }
-
-    .intent-btn strong {
-      display: block;
-      font-family: var(--font-serif);
-      font-size: 1.12rem;
-      margin-bottom: 2px;
-    }
-
-    .intent-btn span {
-      font-size: 0.78rem;
-      opacity: 0.84;
-      display: block;
-    }
-
-    .composer-area textarea {
-      width: 100%;
-      min-height: 104px;
-      padding: 14px;
-      background-color: var(--bg-paper-alt);
-      border: 1px solid var(--border-strong);
-      font-family: var(--font-sans);
-      font-size: 0.92rem;
-      color: var(--ink-dark);
-      margin-bottom: 16px;
-      resize: vertical;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-buttons-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .contact-buttons-row .btn {
-      padding: 11px 16px;
-      font-size: 0.84rem;
-    }
-
-    .social-links {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: var(--ink-muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding-top: 8px;
-      border-top: 1px dashed var(--border-subtle);
-    }
-
-    .social-links a {
-      color: var(--ink-black);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-terracotta);
-    }
-
-    footer {
-      background-color: var(--ink-black);
-      color: rgba(246, 243, 236, 0.65);
-      padding: 28px 0 36px;
-      font-size: 0.84rem;
-      border-top: 1px solid rgba(246, 243, 236, 0.14);
-    }
-
-    .footer-flex {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    /* Immersive Reader Modal */
-    .reader-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background-color: rgba(13, 13, 13, 0.84);
-      backdrop-filter: blur(4px);
-      overflow-y: auto;
-      padding: 32px 16px;
-    }
-
-    .reader-modal.open {
-      display: block;
-    }
-
-    .reader-sheet {
-      max-width: 740px;
-      margin: 0 auto;
-      background-color: var(--bg-paper);
-      color: var(--ink-dark);
-      padding: 44px;
-      border: 1px solid var(--ink-black);
-      transition: background-color 0.25s, color 0.25s;
-    }
-
-    .reader-sheet.dark-paper {
-      background-color: #141312;
-      color: #EAE5DC;
-      border-color: rgba(246, 243, 236, 0.25);
-    }
-
-    .reader-toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding-bottom: 18px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid currentColor;
-      opacity: 0.85;
-    }
-
-    .reader-controls {
-      display: flex;
-      gap: 8px;
-    }
-
-    .tool-btn {
-      background: transparent;
-      border: 1px solid currentColor;
-      color: inherit;
-      padding: 5px 10px;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .tool-btn:hover {
-      opacity: 0.75;
-    }
-
-    .reader-body h2 {
-      color: inherit;
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-
-    .reader-body .reader-meta {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: var(--accent-terracotta);
-      margin-bottom: 28px;
-      display: block;
-    }
-
-    .reader-content p {
-      margin-bottom: 18px;
-      font-size: 1.06rem;
-      line-height: 1.8;
-    }
-
-    .citation-box {
-      margin-top: 32px;
-      padding-top: 18px;
-      border-top: 1px dashed currentColor;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .clube-grid,
-      .clinic-grid,
-      .closing-grid,
-      .essays-grid,
-      .cards-3,
-      .biblio-list {
-        grid-template-columns: 1fr;
-      }
-      nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-paper);
-        padding: 20px 24px;
-        border-bottom: 1px solid var(--ink-black);
-        box-shadow: 0 12px 24px rgba(13, 13, 13, 0.08);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .reader-sheet {
-        padding: 26px 20px;
-      }
+  <style>:root{--bg-paper:#F6F3EC;--bg-paper-alt:#EDE8DD;--ink-dark:#1C1B1A;--ink-black:#0D0D0D;--ink-muted:#57534E;--accent-terracotta:#A64B2A;--border-subtle:rgba(28,27,26,0.16);--border-strong:rgba(28,27,26,0.45);--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;--font-mono:'JetBrains Mono',monospace;}*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;background-color:var(--bg-paper);color:var(--ink-dark);font-family:var(--font-sans);line-height:1.65;}body{background-color:var(--bg-paper);background-image:radial-gradient(rgba(28,27,26,0.045) 1px,transparent 0);background-size:24px 24px;overflow-x:hidden;}section[id]{scroll-margin-top:78px;}.progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent-terracotta);z-index:1000;transition:width 0.1s ease-out;}.container{max-width:1140px;margin:0 auto;padding:0 24px;}header{position:sticky;top:0;z-index:900;background-color:rgba(246,243,236,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border-subtle);}.nav-wrapper{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:16px;}.brand{text-decoration:none;color:var(--ink-black);display:flex;flex-direction:column;}.brand-title{font-family:var(--font-serif);font-size:1.72rem;font-weight:700;letter-spacing:-0.02em;line-height:1.05;}.brand-sub{font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-muted);letter-spacing:0.04em;margin-top:3px;}nav ul{display:flex;list-style:none;gap:24px;align-items:center;}nav a{text-decoration:none;color:var(--ink-dark);font-size:0.88rem;font-weight:500;padding-bottom:4px;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;}nav a:hover,nav a.active-link{color:var(--accent-terracotta);border-bottom-color:var(--accent-terracotta);}.mobile-menu-btn{display:none;background:none;border:1px solid var(--border-strong);padding:6px 12px;font-family:var(--font-mono);font-size:0.75rem;cursor:pointer;color:var(--ink-black);}.eyebrow{font-family:var(--font-mono);font-size:0.74rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-terracotta);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;}.hatch-mark{display:inline-block;width:28px;height:10px;background:repeating-linear-gradient( -55deg,var(--ink-black),var(--ink-black) 1.5px,transparent 1.5px,transparent 4.5px );}.hatch-mark-light{display:inline-block;width:28px;height:10px;background:repeating-linear-gradient( -55deg,#E89274,#E89274 1.5px,transparent 1.5px,transparent 4.5px );}h1,h2,h3{font-family:var(--font-serif);font-weight:700;color:var(--ink-black);line-height:1.12;}.hero{padding:64px 0 76px;}.hero-grid{display:grid;grid-template-columns:1.22fr 0.92fr;gap:44px;align-items:start;}.hero h1{font-size:clamp(2.4rem,4.4vw,3.8rem);letter-spacing:-0.025em;margin-bottom:22px;}.hero h1 em{font-style:italic;color:var(--accent-terracotta);font-weight:600;}.manifesto-lead{font-size:1.1rem;color:var(--ink-dark);max-width:60ch;margin-bottom:30px;border-left:3px solid var(--ink-black);padding-left:20px;}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;font-size:0.9rem;font-weight:500;text-decoration:none;cursor:pointer;transition:all 0.2s ease;border:1px solid var(--ink-black);}.btn-primary{background-color:var(--ink-black);color:var(--bg-paper);}.btn-primary:hover{background-color:var(--accent-terracotta);border-color:var(--accent-terracotta);}.btn-secondary{background-color:transparent;color:var(--ink-black);}.btn-secondary:hover{background-color:var(--ink-black);color:var(--bg-paper);}.hero-right{display:flex;flex-direction:column;gap:20px;}.hero-portrait-frame{border:1px solid var(--ink-black);padding:10px;background-color:var(--bg-paper-alt);}.hero-portrait-box{aspect-ratio:4 / 3;width:100%;background-color:#1E1D1B;border-bottom:2px solid var(--accent-terracotta);overflow:hidden;}.hero-portrait-img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 20%;filter:grayscale(100%) contrast(116%);}.hero-portrait-caption{padding:12px 4px 2px;font-size:0.85rem;color:var(--ink-dark);line-height:1.5;}.hero-portrait-caption strong{font-family:var(--font-serif);font-size:1.05rem;color:var(--ink-black);}.radar-card{background-color:var(--ink-black);color:var(--bg-paper);padding:22px 24px;border-left:4px solid var(--accent-terracotta);box-shadow:8px 8px 0px rgba(166,75,42,0.22);}.radar-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(246,243,236,0.16);padding-bottom:10px;margin-bottom:14px;}.radar-badge{font-family:var(--font-mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#E89274;display:flex;align-items:center;gap:8px;}.pulse-dot{width:7px;height:7px;background-color:#E89274;border-radius:50%;display:inline-block;}.radar-item{padding:10px 0;border-bottom:1px dashed rgba(246,243,236,0.18);}.radar-item:last-child{border-bottom:none;padding-bottom:0;}.radar-tag{font-family:var(--font-mono);font-size:0.66rem;color:rgba(246,243,236,0.65);display:block;margin-bottom:3px;}.radar-item h3{color:var(--bg-paper);font-size:1.12rem;margin-bottom:3px;}.radar-item p{font-size:0.83rem;color:rgba(246,243,236,0.82);}.fracture-line{height:18px;width:100%;background-image:linear-gradient(135deg,var(--ink-black) 25%,transparent 25%),linear-gradient(225deg,var(--ink-black) 25%,transparent 25%);background-position:0 0;background-size:16px 18px;opacity:0.12;}.clinic-section{background-color:var(--ink-black);color:var(--bg-paper);padding:84px 0;position:relative;border-top:3px solid var(--accent-terracotta);border-bottom:3px solid var(--accent-terracotta);}.clinic-section .eyebrow{color:#E89274;}.clinic-section h2{color:var(--bg-paper);font-size:clamp(2.1rem,3.6vw,3rem);margin-bottom:20px;}.clinic-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:start;}.clinic-text p{color:rgba(246,243,236,0.86);font-size:1.02rem;margin-bottom:18px;}.clinic-pillars{border:1px solid rgba(246,243,236,0.2);padding:28px;background-color:rgba(255,255,255,0.03);}.clinic-pillars h3{color:var(--bg-paper);font-size:1.4rem;margin-bottom:16px;border-bottom:1px solid rgba(246,243,236,0.15);padding-bottom:10px;}.pillar-list{list-style:none;}.pillar-list li{margin-bottom:14px;font-size:0.92rem;color:rgba(246,243,236,0.85);padding-left:16px;position:relative;}.pillar-list li::before{content:"—";position:absolute;left:0;color:#E89274;}.section{padding:80px 0;border-bottom:1px solid var(--border-subtle);}.section-aged{background-color:var(--bg-paper-alt);border-bottom:1px solid var(--border-strong);}.section-header{max-width:740px;margin-bottom:40px;}.section-header h2{font-size:clamp(2rem,3.5vw,2.85rem);margin-bottom:14px;}.section-header p{color:var(--ink-muted);font-size:1.02rem;}.tabs-nav{display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border-strong);margin-bottom:32px;}.tab-btn{background:transparent;border:1px solid transparent;border-bottom:none;padding:12px 20px;font-family:var(--font-mono);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--ink-muted);transition:all 0.2s;}.tab-btn.active{background-color:var(--ink-black);color:var(--bg-paper);}.tab-btn:hover:not(.active){color:var(--ink-black);border-color:var(--border-subtle);}.tab-panel{display:none;}.tab-panel.active{display:block;}.clube-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:36px;background-color:var(--bg-paper);padding:36px;border:1px solid var(--border-strong);}.clube-info h3{font-size:1.85rem;margin-bottom:12px;}.clube-meta{font-family:var(--font-mono);font-size:0.76rem;color:var(--accent-terracotta);margin-bottom:16px;display:block;}.clube-info p{margin-bottom:16px;font-size:0.96rem;}.itinerary-box{background-color:var(--bg-paper-alt);border:1px solid var(--border-strong);padding:24px;}.itinerary-box h4{font-family:var(--font-mono);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border-subtle);}.itinerary-step{padding:9px 0;border-bottom:1px solid var(--border-subtle);font-size:0.88rem;}.itinerary-step:last-child{border-bottom:none;}.status-pill{font-family:var(--font-mono);font-size:0.66rem;padding:2px 7px;margin-right:6px;text-transform:uppercase;}.status-done{background:rgba(28,27,26,0.1);color:var(--ink-muted);}.status-next{background:var(--accent-terracotta);color:var(--bg-paper);}.status-soon{background:rgba(166,75,42,0.15);color:var(--accent-terracotta);font-weight:500;}.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}.editorial-card{background-color:var(--bg-paper);border:1px solid var(--border-strong);padding:28px;display:flex;flex-direction:column;justify-content:space-between;}.editorial-card h3{font-size:1.45rem;margin-bottom:10px;}.editorial-card p{font-size:0.92rem;color:var(--ink-dark);margin-bottom:18px;}.biblio-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}.biblio-item{border-left:2px solid var(--accent-terracotta);padding:14px 18px;background-color:var(--bg-paper);border-top:1px solid var(--border-subtle);border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);}.biblio-item strong{font-family:var(--font-serif);font-size:1.25rem;display:block;}.biblio-item span{font-size:0.88rem;color:var(--ink-muted);}.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}.filter-btn{background:transparent;border:1px solid var(--border-strong);padding:7px 14px;font-family:var(--font-mono);font-size:0.74rem;cursor:pointer;color:var(--ink-dark);transition:all 0.2s;}.filter-btn.active,.filter-btn:hover{background-color:var(--accent-terracotta);border-color:var(--accent-terracotta);color:var(--bg-paper);}.essays-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}.essay-card{border:1px solid var(--border-subtle);background-color:var(--bg-paper);padding:30px;transition:transform 0.2s,border-color 0.2s;display:flex;flex-direction:column;justify-content:space-between;}.essay-card:hover{border-color:var(--ink-black);transform:translateY(-2px);}.essay-card.fragment-style{background-color:var(--bg-paper-alt);border-left:3px solid var(--ink-black);}.essay-meta{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent-terracotta);margin-bottom:10px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;}.essay-card h3{font-size:1.55rem;margin-bottom:12px;}.essay-excerpt{font-size:0.94rem;color:var(--ink-muted);margin-bottom:20px;}.read-trigger{background:none;border:none;border-bottom:1px solid var(--ink-black);padding-bottom:3px;font-family:var(--font-mono);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;color:var(--ink-black);align-self:flex-start;text-decoration:none;}.read-trigger:hover{color:var(--accent-terracotta);border-color:var(--accent-terracotta);}.closing-section{background-color:var(--ink-black);color:var(--bg-paper);padding:84px 0 64px;border-top:3px solid var(--accent-terracotta);}.closing-grid{display:grid;grid-template-columns:0.92fr 1.08fr;gap:44px;align-items:start;}.closing-section .eyebrow{color:#E89274;}.bio-content h3{color:var(--bg-paper);font-size:2.1rem;margin-bottom:8px;}.crp-tag{font-family:var(--font-mono);font-size:0.78rem;color:#E89274;display:block;margin-bottom:18px;}.bio-content p{color:rgba(246,243,236,0.85);margin-bottom:16px;font-size:0.98rem;}.contact-box{background-color:var(--bg-paper);color:var(--ink-dark);border:1px solid rgba(246,243,236,0.35);padding:32px;box-shadow:10px 10px 0px rgba(166,75,42,0.28);}.contact-box .eyebrow{color:var(--accent-terracotta);}.contact-box h3{color:var(--ink-black);}.intent-selector{display:grid;grid-template-columns:1fr;gap:10px;margin:18px 0 20px;}.intent-btn{padding:12px 14px;border:1px solid var(--border-strong);background-color:var(--bg-paper-alt);text-align:left;cursor:pointer;transition:all 0.2s;}.intent-btn.active{background-color:var(--ink-black);color:var(--bg-paper);border-color:var(--ink-black);}.intent-btn strong{display:block;font-family:var(--font-serif);font-size:1.12rem;margin-bottom:2px;}.intent-btn span{font-size:0.78rem;opacity:0.84;display:block;}.composer-area textarea{width:100%;min-height:104px;padding:14px;background-color:var(--bg-paper-alt);border:1px solid var(--border-strong);font-family:var(--font-sans);font-size:0.92rem;color:var(--ink-dark);margin-bottom:16px;resize:vertical;}.contact-actions{display:flex;flex-direction:column;gap:12px;}.contact-buttons-row{display:flex;flex-wrap:wrap;gap:10px;}.contact-buttons-row .btn{padding:11px 16px;font-size:0.84rem;}.social-links{font-family:var(--font-mono);font-size:0.76rem;color:var(--ink-muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:8px;border-top:1px dashed var(--border-subtle);}.social-links a{color:var(--ink-black);text-decoration:none;border-bottom:1px solid var(--accent-terracotta);}footer{background-color:var(--ink-black);color:rgba(246,243,236,0.65);padding:28px 0 36px;font-size:0.84rem;border-top:1px solid rgba(246,243,236,0.14);}.footer-flex{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}.reader-modal{display:none;position:fixed;inset:0;z-index:2000;background-color:rgba(13,13,13,0.84);backdrop-filter:blur(4px);overflow-y:auto;padding:32px 16px;}.reader-modal.open{display:block;}.reader-sheet{max-width:740px;margin:0 auto;background-color:var(--bg-paper);color:var(--ink-dark);padding:44px;border:1px solid var(--ink-black);transition:background-color 0.25s,color 0.25s;}.reader-sheet.dark-paper{background-color:#141312;color:#EAE5DC;border-color:rgba(246,243,236,0.25);}.reader-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-bottom:18px;margin-bottom:28px;border-bottom:1px solid currentColor;opacity:0.85;}.reader-controls{display:flex;gap:8px;}.tool-btn{background:transparent;border:1px solid currentColor;color:inherit;padding:5px 10px;font-family:var(--font-mono);font-size:0.72rem;cursor:pointer;transition:opacity 0.2s;}.tool-btn:hover{opacity:0.75;}.reader-body h2{color:inherit;font-size:2.2rem;margin-bottom:12px;}.reader-body .reader-meta{font-family:var(--font-mono);font-size:0.76rem;color:var(--accent-terracotta);margin-bottom:28px;display:block;}.reader-content p{margin-bottom:18px;font-size:1.06rem;line-height:1.8;}.citation-box{margin-top:32px;padding-top:18px;border-top:1px dashed currentColor;font-family:var(--font-mono);font-size:0.75rem;}@media (max-width:900px){.hero-grid,.clube-grid,.clinic-grid,.closing-grid,.essays-grid,.cards-3,.biblio-list{grid-template-columns:1fr;}nav ul{display:none;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:var(--bg-paper);padding:20px 24px;border-bottom:1px solid var(--ink-black);box-shadow:0 12px 24px rgba(13,13,13,0.08);}nav ul.show{display:flex;}.mobile-menu-btn{display:block;}.reader-sheet{padding:26px 20px;}}
+    :focus-visible { outline: 3px solid var(--accent-terracotta); outline-offset: 3px; }
+    button, .btn, nav a { -webkit-tap-highlight-color: transparent; }
+    .mobile-menu-btn, .tab-btn, .filter-btn, .intent-btn, .tool-btn { min-height: 44px; }
+    .reader-modal[aria-hidden="true"] { visibility: hidden; }
+    [hidden] { display: none !important; }
+    @media (max-width: 600px) {
+      .container { padding-inline: 18px; }
+      .hero, .section { padding-block: 56px; }
+      .contact-box, .clube-grid, .editorial-card, .essay-card { padding: 22px; }
+      .reader-modal { padding: 14px 10px; }
+      .reader-sheet { padding: 22px 16px; }
+      .reader-controls { flex-wrap: wrap; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
@@ -1030,7 +39,6 @@
 
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Quadrante 1: Cabeçalho -->
   <header>
     <div class="container nav-wrapper">
       <a href="#limiar" class="brand">
@@ -1038,9 +46,9 @@
         <span class="brand-sub">Psicanálise & Brasilidades · CRP 06/189584</span>
       </a>
 
-      <button class="mobile-menu-btn" id="menuToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <button type="button" class="mobile-menu-btn" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">Menu</button>
 
-      <nav>
+      <nav aria-label="Navegação principal">
         <ul id="navMenu">
           <li><a href="#clinica" data-nav="clinica">A Clínica</a></li>
           <li><a href="#transmissao" data-nav="transmissao">Encruzilhadas & Transmissão</a></li>
@@ -1051,7 +59,6 @@
     </div>
   </header>
 
-  <!-- Quadrante 2: Limiar / Abertura -->
   <section id="limiar" class="hero">
     <div class="container hero-grid">
       <div>
@@ -1067,7 +74,6 @@
         </div>
       </div>
 
-      <!-- Coluna Direita: Foto Real em P&B Semântica + Legenda-Assinatura + Radar Compacto -->
       <div class="hero-right">
         <figure class="hero-portrait-frame">
           <div class="hero-portrait-box">
@@ -1102,7 +108,6 @@
 
   <div class="fracture-line"></div>
 
-  <!-- A Clínica & A Escuta (Bloco Nanquim 1) -->
   <section id="clinica" class="clinic-section">
     <div class="container clinic-grid">
       <div class="clinic-text">
@@ -1115,7 +120,7 @@
           Na escuta sustentada por <strong>Eduardo Caltram</strong>, a condução clínica orienta-se pela ética da psicanálise: uma palavra singular, não moralista e atenta às dimensões de raça, gênero e território que constituem o sofrimento psíquico.
         </p>
         <div style="margin-top: 28px;">
-          <a href="#travessia" class="btn" style="background-color: var(--bg-paper); color: var(--ink-black); border-color: var(--bg-paper);" onclick="selectIntent('analise')">Conversar sobre início de análise</a>
+          <a href="#travessia" class="btn" style="background-color: var(--bg-paper); color: var(--ink-black); border-color: var(--bg-paper);" data-intent="analise">Conversar sobre início de análise</a>
         </div>
       </div>
 
@@ -1130,7 +135,6 @@
     </div>
   </section>
 
-  <!-- Encruzilhadas & Transmissão (Papel Envelhecido #EDE8DD) -->
   <section id="transmissao" class="section section-aged">
     <div class="container">
       <div class="section-header">
@@ -1139,14 +143,13 @@
         <p>Espaços de leitura compartilhada, grupos de estudo e interlocução entre pares para tensionar as heranças coloniais na clínica e reinventar a escuta no Brasil.</p>
       </div>
 
-      <div class="tabs-nav" role="tablist">
-        <button class="tab-btn active" data-tab="clube">Clube de Leitura Desassossego</button>
-        <button class="tab-btn" data-tab="grupos">Grupos de Estudo & Intervisão</button>
-        <button class="tab-btn" data-tab="constelacao">Constelação Bibliográfica</button>
+      <div class="tabs-nav" role="tablist" aria-label="Seções de Encruzilhadas e Transmissão">
+        <button type="button" class="tab-btn active" id="tab-trigger-clube" role="tab" aria-controls="tab-clube" aria-selected="true" tabindex="0" data-tab="clube">Clube de Leitura Desassossego</button>
+        <button type="button" class="tab-btn" id="tab-trigger-grupos" role="tab" aria-controls="tab-grupos" aria-selected="false" tabindex="-1" data-tab="grupos">Grupos de Estudo & Intervisão</button>
+        <button type="button" class="tab-btn" id="tab-trigger-constelacao" role="tab" aria-controls="tab-constelacao" aria-selected="false" tabindex="-1" data-tab="constelacao">Constelação Bibliográfica</button>
       </div>
 
-      <!-- Tab 1: Clube de Leitura -->
-      <div id="tab-clube" class="tab-panel active">
+      <div id="tab-clube" class="tab-panel active" role="tabpanel" aria-labelledby="tab-trigger-clube" tabindex="0">
         <div class="clube-grid">
           <div class="clube-info">
             <span class="clube-meta">ENCONTROS QUINZENAIS · ONLINE (GOOGLE MEET)</span>
@@ -1157,7 +160,7 @@
             <p>
               Aberto a profissionais psi, estudantes e leitores interessados, o espaço funciona como uma roda de escuta coletiva onde a leitura de <em>Olhos d'Água</em> desestabiliza o saber acadêmico encastelado.
             </p>
-            <a href="#travessia" class="btn btn-primary" onclick="selectIntent('formacao')">Participar da Próxima Roda</a>
+            <a href="#travessia" class="btn btn-primary" data-intent="formacao">Participar da Próxima Roda</a>
           </div>
 
           <div class="itinerary-box">
@@ -1190,8 +193,7 @@
         </div>
       </div>
 
-      <!-- Tab 2: Grupos & Intervisão -->
-      <div id="tab-grupos" class="tab-panel">
+      <div id="tab-grupos" class="tab-panel" role="tabpanel" aria-labelledby="tab-trigger-grupos" tabindex="0" hidden>
         <div class="cards-3">
           <div class="editorial-card">
             <div>
@@ -1199,7 +201,7 @@
               <h3>Intervisão Clínica entre Pares</h3>
               <p>Projeto previsto para o meio de 2027: espaço horizontal de escuta e sustentação conjunta de impasses clínicos entre psicólogos e psicanalistas, atravessado por raça, gênero, classe e sofrimento ético-político.</p>
             </div>
-            <a href="#travessia" class="read-trigger" onclick="selectIntent('formacao')">Registrar interesse para 2027 →</a>
+            <a href="#travessia" class="read-trigger" data-intent="formacao">Registrar interesse para 2027 →</a>
           </div>
 
           <div class="editorial-card">
@@ -1208,7 +210,7 @@
               <h3>Psicanálise & Brasilidades (O Contrapelo)</h3>
               <p>Leitura cruzada entre a clínica psicanalítica e o pensamento negro e anticolonial brasileiro, interrogando como o racismo estrutural e a história colonial atravessam a constituição do sujeito e a escuta.</p>
             </div>
-            <a href="#travessia" class="read-trigger" onclick="selectIntent('formacao')">Manifestar interesse no grupo →</a>
+            <a href="#travessia" class="read-trigger" data-intent="formacao">Manifestar interesse no grupo →</a>
           </div>
 
           <div class="editorial-card">
@@ -1217,13 +219,12 @@
               <h3>Clínica, Cultura & Ficção</h3>
               <p>Laboratório de leitura que coloca a psicanálise em diálogo com a literatura brasileira, o cinema e os mangás (<em>Jujutsu Kaisen</em>, <em>Choujin X</em>) para escutar o mal-estar e as mutações contemporâneas.</p>
             </div>
-            <a href="#travessia" class="read-trigger" onclick="selectIntent('formacao')">Conhecer proposta de leitura →</a>
+            <a href="#travessia" class="read-trigger" data-intent="formacao">Conhecer proposta de leitura →</a>
           </div>
         </div>
       </div>
 
-      <!-- Tab 3: Constelação Bibliográfica (8 Blocos) -->
-      <div id="tab-constelacao" class="tab-panel">
+      <div id="tab-constelacao" class="tab-panel" role="tabpanel" aria-labelledby="tab-trigger-constelacao" tabindex="0" hidden>
         <div class="biblio-list">
           <div class="biblio-item">
             <strong>Neusa Santos Souza</strong>
@@ -1262,7 +263,6 @@
     </div>
   </section>
 
-  <!-- Inconstância Mental — Caderno de Escritos, Ensaios & Fragmentos -->
   <section id="caderno" class="section">
     <div class="container">
       <div class="section-header">
@@ -1272,15 +272,15 @@
       </div>
 
       <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">Todos os Escritos</button>
-        <button class="filter-btn" data-filter="brasilidades">Clínica & Brasilidades</button>
-        <button class="filter-btn" data-filter="genero">Gênero & Virilidade</button>
-        <button class="filter-btn" data-filter="cultura">Psicanálise & Cultura Pop</button>
-        <button class="filter-btn" data-filter="fragmentos">Fragmentos & Poesia</button>
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">Todos os Escritos</button>
+        <button type="button" class="filter-btn" data-filter="brasilidades" aria-pressed="false">Clínica & Brasilidades</button>
+        <button type="button" class="filter-btn" data-filter="genero" aria-pressed="false">Gênero & Virilidade</button>
+        <button type="button" class="filter-btn" data-filter="cultura" aria-pressed="false">Psicanálise & Cultura Pop</button>
+        <button type="button" class="filter-btn" data-filter="fragmentos" aria-pressed="false">Fragmentos & Poesia</button>
       </div>
 
       <div class="essays-grid" id="essaysContainer">
-        <!-- Essay 1 -->
+
         <article class="essay-card" data-category="genero">
           <div>
             <div class="essay-meta">
@@ -1292,10 +292,9 @@
               Quando a masculinidade se encerra numa armadura especular, o outro deixa de ser alteridade para tornar-se apenas superfície de devolução. Notas sobre a rigidez narcísica no Brasil contemporâneo.
             </p>
           </div>
-          <button class="read-trigger" onclick="openReader(0)">Abrir leitura imersiva →</button>
+          <button type="button" class="read-trigger" data-open-reader="0">Abrir leitura imersiva →</button>
         </article>
 
-        <!-- Essay 2 -->
         <article class="essay-card" data-category="brasilidades">
           <div>
             <div class="essay-meta">
@@ -1307,10 +306,9 @@
               Diagnosticar como transtorno individual aquilo que é resposta legítima ao racismo, à precarização e à violência de Estado é repetir a lógica colonial dentro do consultório.
             </p>
           </div>
-          <button class="read-trigger" onclick="openReader(1)">Abrir leitura imersiva →</button>
+          <button type="button" class="read-trigger" data-open-reader="1">Abrir leitura imersiva →</button>
         </article>
 
-        <!-- Essay 3 -->
         <article class="essay-card" data-category="cultura">
           <div>
             <div class="essay-meta">
@@ -1322,10 +320,9 @@
               Do resto maldito que nasce do afeto humano não simbolizado à metamorfose como resposta ao colapso identitário: o que os mangás contemporâneos ensinam sobre o sintoma.
             </p>
           </div>
-          <button class="read-trigger" onclick="openReader(2)">Abrir leitura imersiva →</button>
+          <button type="button" class="read-trigger" data-open-reader="2">Abrir leitura imersiva →</button>
         </article>
 
-        <!-- Essay 4 (Fragmento) -->
         <article class="essay-card fragment-style" data-category="fragmentos">
           <div>
             <div class="essay-meta">
@@ -1337,13 +334,12 @@
               "Não há cura para o que somos, porque existir não é uma doença a ser erradicada. A análise não promete uma linha reta: ela abre espaço para sustentar o desvio."
             </p>
           </div>
-          <button class="read-trigger" onclick="openReader(3)">Ler fragmento completo →</button>
+          <button type="button" class="read-trigger" data-open-reader="3">Ler fragmento completo →</button>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Travessia & Contato -->
   <section id="travessia" class="closing-section">
     <div class="container">
       <div class="closing-grid">
@@ -1365,17 +361,17 @@
           <p style="color: var(--ink-muted); font-size: 0.9rem;">Escolha o motivo do seu contato e edite a mensagem como desejar:</p>
 
           <div class="intent-selector">
-            <button type="button" class="intent-btn active" data-intent="formacao" onclick="selectIntent('formacao')">
+            <button type="button" class="intent-btn active" data-intent="formacao" aria-pressed="true" data-intent="formacao">
               <strong>Clube, Grupos & Intervisão</strong>
               <span>Para colegas psis, estudantes e participantes de rodas de leitura.</span>
             </button>
 
-            <button type="button" class="intent-btn" data-intent="analise" onclick="selectIntent('analise')">
+            <button type="button" class="intent-btn" data-intent="analise" aria-pressed="false" data-intent="analise">
               <strong>Início de Análise</strong>
               <span>Para agendar uma primeira conversa sobre atendimento clínico online.</span>
             </button>
 
-            <button type="button" class="intent-btn" data-intent="convites" onclick="selectIntent('convites')">
+            <button type="button" class="intent-btn" data-intent="convites" aria-pressed="false" data-intent="convites">
               <strong>Convites, Falas & Parcerias</strong>
               <span>Para mesas de debate, interlocuções e parcerias editoriais.</span>
             </button>
@@ -1387,9 +383,9 @@
 
           <div class="contact-actions">
             <div class="contact-buttons-row">
-              <button type="button" class="btn btn-primary" onclick="sendViaWhatsApp()">Enviar via WhatsApp</button>
-              <button type="button" class="btn btn-secondary" onclick="sendViaEmail()">Enviar por E-mail</button>
-              <button type="button" class="btn btn-secondary" onclick="copyMessage()">Copiar texto</button>
+              <button type="button" class="btn btn-primary" data-action="whatsapp">Enviar via WhatsApp</button>
+              <button type="button" class="btn btn-secondary" data-action="email">Enviar por E-mail</button>
+              <button type="button" class="btn btn-secondary" data-action="copy-message">Copiar texto</button>
             </div>
 
             <div class="social-links">
@@ -1397,7 +393,7 @@
               <a href="https://instagram.com/inconstancia_mental" target="_blank" rel="noopener">Abrir @inconstancia_mental ↗</a>
             </div>
           </div>
-          <p id="copyFeedback" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-terracotta); margin-top: 12px; display: none;">
+          <p id="copyFeedback" role="status" aria-live="polite" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-terracotta); margin-top: 12px; display: none;">
             Mensagem copiada para a área de transferência. Você pode colá-la na DM do Instagram, WhatsApp ou e-mail.
           </p>
         </div>
@@ -1412,16 +408,15 @@
     </div>
   </footer>
 
-  <!-- Immersive Reader Modal -->
-  <div class="reader-modal" id="readerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="reader-modal" id="readerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalMeta" tabindex="-1" aria-hidden="true">
     <div class="reader-sheet" id="readerSheet">
       <div class="reader-toolbar">
         <div class="reader-controls">
-          <button class="tool-btn" onclick="changeFontSize(-1)" aria-label="Diminuir fonte">A-</button>
-          <button class="tool-btn" onclick="changeFontSize(1)" aria-label="Aumentar fonte">A+</button>
-          <button class="tool-btn" onclick="toggleReaderTheme()">Alternar Papel / Nanquim</button>
+          <button type="button" class="tool-btn" data-action="font-down" aria-label="Diminuir fonte">A-</button>
+          <button type="button" class="tool-btn" data-action="font-up" aria-label="Aumentar fonte">A+</button>
+          <button type="button" class="tool-btn" data-action="reader-theme">Alternar Papel / Nanquim</button>
         </div>
-        <button class="tool-btn" onclick="closeReader()">Fechar [ESC]</button>
+        <button type="button" class="tool-btn" data-action="reader-close">Fechar [ESC]</button>
       </div>
 
       <div class="reader-body">
@@ -1431,260 +426,318 @@
 
         <div class="citation-box">
           <p id="modalCitation" style="margin-bottom: 10px;"></p>
-          <button class="tool-btn" id="copyCitationBtn" onclick="copyCitation()">Copiar citação (ABNT)</button>
+          <button type="button" class="tool-btn" id="copyCitationBtn" data-action="copy-citation">Copiar citação (ABNT)</button>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // Canais diretos de contato
-    const CONTACT_CONFIG = {
-      whatsappNumber: "5511971801944",
-      emailAddress: "edu.caltram@gmail.com"
-    };
+(() => {
+  'use strict';
 
-    // Menu mobile toggle & fechamento automático ao clicar em links
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+  const CONFIG = { whatsapp: '5511971801944', email: 'edu.caltram@gmail.com' };
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const menu = $('#navMenu');
+  const menuButton = $('#menuToggle');
+  const modal = $('#readerModal');
+  const readerSheet = $('#readerSheet');
+  const draft = $('#messageDraft');
+  const feedback = $('#copyFeedback');
+  let currentIntent = 'formacao';
+  let currentFontSize = 1.06;
+  let lastFocusedElement = null;
+  let feedbackTimer;
+  let copyTimer;
+  let scrollFrame = 0;
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('show');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-    });
+  const templates = {
+    formacao: 'Olá, Eduardo! Acompanho a Inconstância Mental e gostaria de saber mais sobre os encontros do Clube de Leitura Desassossego / grupos de estudo e intervisão.',
+    analise: 'Olá, Eduardo! Li seus escritos na Inconstância Mental e gostaria de agendar uma primeira conversa para saber mais sobre o atendimento psicanalítico online.',
+    convites: 'Olá, Eduardo! Gostaria de propor uma interlocução / convite para fala ou parceria editorial a partir das pesquisas da Inconstância Mental.'
+  };
+  const subjects = {
+    formacao: 'Clube de Leitura Desassossego / Grupos — Inconstância Mental',
+    analise: 'Primeira conversa sobre atendimento clínico — Eduardo Caltram',
+    convites: 'Convite / Interlocução — Inconstância Mental'
+  };
 
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Barra de progresso e destaque da seção ativa na navegação
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[data-nav]');
-
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      document.getElementById('progressBar').style.width = progress + '%';
-
-      let currentSection = '';
-      sections.forEach(sec => {
-        const sectionTop = sec.offsetTop - 130;
-        if (scrollTop >= sectionTop) {
-          currentSection = sec.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.toggle('active-link', link.dataset.nav === currentSection);
-      });
-    });
-
-    // Abas de Encruzilhadas & Transmissão
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
-        tabPanels.forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-      });
-    });
-
-    // Filtros do Caderno de Escritos
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const essayCards = document.querySelectorAll('.essay-card');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        essayCards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // Compositor de Mensagens por 3 Intenções
-    const intentTemplates = {
-      formacao: "Olá, Eduardo! Acompanho a Inconstância Mental e gostaria de saber mais sobre os encontros do Clube de Leitura Desassossego / grupos de estudo e intervisão.",
-      analise: "Olá, Eduardo! Li seus escritos na Inconstância Mental e gostaria de agendar uma primeira conversa para saber mais sobre o atendimento psicanalítico online.",
-      convites: "Olá, Eduardo! Gostaria de propor uma interlocução / convite para fala ou parceria editorial a partir das pesquisas da Inconstância Mental."
-    };
-
-    const intentSubjects = {
-      formacao: "Clube de Leitura Desassossego / Grupos — Inconstância Mental",
-      analise: "Primeira conversa sobre atendimento clínico — Eduardo Caltram",
-      convites: "Convite / Interlocução — Inconstância Mental"
-    };
-
-    let currentIntent = 'formacao';
-
-    function selectIntent(intentKey) {
-      currentIntent = intentKey;
-      document.querySelectorAll('.intent-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.intent === intentKey);
-      });
-      document.getElementById('messageDraft').value = intentTemplates[intentKey];
+  const essays = [
+    {
+      slug: 'ensaio-narciso-e-eco', meta: 'GÊNERO & VIRILIDADE · ENSAIO · NOV 2026 · 2 MIN',
+      title: 'Para Além de Narciso e Eco: A Vacilação do Semblante Fálico',
+      paragraphs: [
+        'Na tradição mítica revisitada pela psicanálise, Narciso não se apaixona apenas por uma imagem bela: ele sucumbe à recusa da alteridade. Quando Eco lhe dirige a voz, ela só consegue devolver fragmentos das próprias palavras de Narciso — figurando o circuito fechado onde o outro é reduzido a mero espelho confirmador.',
+        'No Brasil contemporâneo, a construção da virilidade opera frequentemente sob essa mesma rigidez especular. O mandato da masculinidade exige uma blindagem afetiva que confunde vulnerabilidade com fracasso e transforma o vínculo em disputa de poder.',
+        "Escutar a vacilação desse semblante na clínica não significa oferecer um novo manual de 'masculinidade saudável', mas sustentar o espaço onde o sujeito possa atravessar a queda de suas ficções de onipotência e inventar outras formas de laço."
+      ],
+      citation: 'CALTRAM, Eduardo. Para Além de Narciso e Eco: A Vacilação do Semblante Fálico. Inconstância Mental, nov. 2026.'
+    },
+    {
+      slug: 'ensaio-diva-descolonizado', meta: 'CLÍNICA & BRASILIDADES · ENSAIO · OUT 2026 · 2 MIN',
+      title: 'O Divã Descolonizado: Escutar o Mal-Estar Sem Patologizar a Sobrevivência',
+      paragraphs: [
+        'Toda clínica é situada em um território e atravessada por uma história. Quando a psicanálise importa categorias universais sem interrogar o solo escravocrata e colonial brasileiro, corre o risco de transformar sofrimento ético-político em déficit individual.',
+        'Como nos ensina Neusa Santos Souza em Tornar-se Negro, o racismo impõe ao sujeito negro uma injunção cruel: tomar como ideal de ego aquilo que o nega. Escutar essa ferida exige que o analista não recuse a realidade material da racialidade sob o álibi de uma suposta neutralidade.',
+        'Descolonizar a escuta é devolver ao sintoma sua dimensão de denúncia e invenção, recusando a captura biomédica que medica a dor social para manter intactas as estruturas que a produzem.'
+      ],
+      citation: 'CALTRAM, Eduardo. O Divã Descolonizado: Escutar o Mal-Estar Sem Patologizar a Sobrevivência. Inconstância Mental, out. 2026.'
+    },
+    {
+      slug: 'ensaio-maldicoes-fissuras-mutacoes', meta: 'PSICANÁLISE & CULTURA POP · ENSAIO · OUT 2026 · 2 MIN',
+      title: 'Maldições, Fissuras e Mutações: O Inconsciente em Jujutsu Kaisen e Choujin X',
+      paragraphs: [
+        'Nos mangás contemporâneos de Gege Akutami e Sui Ishida, o monstro não vem de fora como um invasor puramente externo: ele brota daquilo que os humanos não conseguem elaborar — o medo, o ressentimento, o luto não chorado e o desejo reprimido.',
+        'Em Jujutsu Kaisen, as maldições condensam exatamente o retorno do recalcado coletivo. Já em Choujin X, a transformação corporal emerge nos momentos de ruptura radical, quando as antigas referências de identidade já não sustentam o sujeito diante do trauma.',
+        'Ler essas narrativas ao lado da psicanálise permite reconhecer como a cultura pop encena, com traço visceral, a verdade freudiana de que somos habitados por uma alteridade íntima que não se deixa domesticar.'
+      ],
+      citation: 'CALTRAM, Eduardo. Maldições, Fissuras e Mutações: O Inconsciente em Jujutsu Kaisen e Choujin X. Inconstância Mental, out. 2026.'
+    },
+    {
+      slug: 'fragmento-inconstancia-etica', meta: 'FRAGMENTO & POESIA · @INCONSTANCIA_MENTAL · NOV 2026 · 1 MIN',
+      title: 'Nota sobre a Inconstância como Ética',
+      paragraphs: [
+        'Querem nos convencer de que a saúde mental é uma linha reta, um gráfico estável, uma performance sem rachaduras.',
+        'Mas o humano pulsa na inconstância. É na fissura da certeza que uma pergunta verdadeira pode nascer; é no tropeço da fala que o sujeito se escuta pela primeira vez.',
+        'Não há cura para o que somos, porque existir não é uma doença a ser erradicada. A análise não promete uma linha reta: ela abre espaço para sustentar o desvio.'
+      ],
+      citation: 'CALTRAM, Eduardo. Nota sobre a Inconstância como Ética. Inconstância Mental (@inconstancia_mental), nov. 2026.'
     }
+  ];
 
-    function showFeedback(msg) {
-      const feedback = document.getElementById('copyFeedback');
-      feedback.textContent = msg;
-      feedback.style.display = 'block';
-      setTimeout(() => { feedback.style.display = 'none'; }, 4500);
-    }
+  function updatePage() {
+    const y = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = $('#progressBar');
+    if (progress) progress.style.width = `${maxScroll > 0 ? (y / maxScroll) * 100 : 0}%`;
 
-    function copyMessage() {
-      const text = document.getElementById('messageDraft').value;
-      navigator.clipboard.writeText(text).then(() => {
-        showFeedback("Mensagem copiada para a área de transferência. Você pode colá-la na DM do Instagram, WhatsApp ou e-mail.");
-      });
-    }
+    let activeSection = '';
+    $$('section[id]').forEach(section => {
+      if (y >= section.offsetTop - 130) activeSection = section.id;
+    });
+    $$('nav [data-nav]').forEach(link => {
+      link.classList.toggle('active-link', link.dataset.nav === activeSection);
+    });
+  }
 
-    function sendViaWhatsApp() {
-      const text = encodeURIComponent(document.getElementById('messageDraft').value);
-      const base = CONTACT_CONFIG.whatsappNumber
-        ? `https://wa.me/${CONTACT_CONFIG.whatsappNumber}?text=${text}`
-        : `https://api.whatsapp.com/send?text=${text}`;
-      window.open(base, '_blank', 'noopener');
-    }
+  function schedulePageUpdate() {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      updatePage();
+    });
+  }
 
-    function sendViaEmail() {
-      const subject = encodeURIComponent(intentSubjects[currentIntent]);
-      const body = encodeURIComponent(document.getElementById('messageDraft').value);
-      window.location.href = `mailto:${CONTACT_CONFIG.emailAddress}?subject=${subject}&body=${body}`;
-    }
+  function setMenu(open) {
+    if (!menu || !menuButton) return;
+    menu.classList.toggle('show', open);
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+  }
 
-    // Dados dos Ensaios & Fragmentos + Deep Linking via URL Hash
-    const essaysData = [
-      {
-        slug: "ensaio-narciso-e-eco",
-        meta: "GÊNERO & VIRILIDADE · ENSAIO · NOV 2026 · 2 MIN",
-        title: "Para Além de Narciso e Eco: A Vacilação do Semblante Fálico",
-        paragraphs: [
-          "Na tradição mítica revisitada pela psicanálise, Narciso não se apaixona apenas por uma imagem bela: ele sucumbe à recusa da alteridade. Quando Eco lhe dirige a voz, ela só consegue devolver fragmentos das próprias palavras de Narciso — figurando o circuito fechado onde o outro é reduzido a mero espelho confirmador.",
-          "No Brasil contemporâneo, a construção da virilidade opera frequentemente sob essa mesma rigidez especular. O mandato da masculinidade exige uma blindagem afetiva que confunde vulnerabilidade com fracasso e transforma o vínculo em disputa de poder.",
-          "Escutar a vacilação desse semblante na clínica não significa oferecer um novo manual de 'masculinidade saudável', mas sustentar o espaço onde o sujeito possa atravessar a queda de suas ficções de onipotência e inventar outras formas de laço."
-        ],
-        citation: "CALTRAM, Eduardo. Para Além de Narciso e Eco: A Vacilação do Semblante Fálico. Inconstância Mental, nov. 2026."
-      },
-      {
-        slug: "ensaio-diva-descolonizado",
-        meta: "CLÍNICA & BRASILIDADES · ENSAIO · OUT 2026 · 2 MIN",
-        title: "O Divã Descolonizado: Escutar o Mal-Estar Sem Patologizar a Sobrevivência",
-        paragraphs: [
-          "Toda clínica é situada em um território e atravessada por uma história. Quando a psicanálise importa categorias universais sem interrogar o solo escravocrata e colonial brasileiro, corre o risco de transformar sofrimento ético-político em déficit individual.",
-          "Como nos ensina Neusa Santos Souza em Tornar-se Negro, o racismo impõe ao sujeito negro uma injunção cruel: tomar como ideal de ego aquilo que o nega. Escutar essa ferida exige que o analista não recuse a realidade material da racialidade sob o álibi de uma suposta neutralidade.",
-          "Descolonizar a escuta é devolver ao sintoma sua dimensão de denúncia e invenção, recusando a captura biomédica que medica a dor social para manter intactas as estruturas que a produzem."
-        ],
-        citation: "CALTRAM, Eduardo. O Divã Descolonizado: Escutar o Mal-Estar Sem Patologizar a Sobrevivência. Inconstância Mental, out. 2026."
-      },
-      {
-        slug: "ensaio-maldicoes-fissuras-mutacoes",
-        meta: "PSICANÁLISE & CULTURA POP · ENSAIO · OUT 2026 · 2 MIN",
-        title: "Maldições, Fissuras e Mutações: O Inconsciente em Jujutsu Kaisen e Choujin X",
-        paragraphs: [
-          "Nos mangás contemporâneos de Gege Akutami e Sui Ishida, o monstro não vem de fora como um invasor puramente externo: ele brota daquilo que os humanos não conseguem elaborar — o medo, o ressentimento, o luto não chorado e o desejo reprimido.",
-          "Em Jujutsu Kaisen, as maldições condensam exatamente o retorno do recalcado coletivo. Já em Choujin X, a transformação corporal emerge nos momentos de ruptura radical, quando as antigas referências de identidade já não sustentam o sujeito diante do trauma.",
-          "Ler essas narrativas ao lado da psicanálise permite reconhecer como a cultura pop encena, com traço visceral, a verdade freudiana de que somos habitados por uma alteridade íntima que não se deixa domesticar."
-        ],
-        citation: "CALTRAM, Eduardo. Maldições, Fissuras e Mutações: O Inconsciente em Jujutsu Kaisen e Choujin X. Inconstância Mental, out. 2026."
-      },
-      {
-        slug: "fragmento-inconstancia-etica",
-        meta: "FRAGMENTO & POESIA · @INCONSTANCIA_MENTAL · NOV 2026 · 1 MIN",
-        title: "Nota sobre a Inconstância como Ética",
-        paragraphs: [
-          "Querem nos convencer de que a saúde mental é uma linha reta, um gráfico estável, uma performance sem rachaduras.",
-          "Mas o humano pulsa na inconstância. É na fissura da certeza que uma pergunta verdadeira pode nascer; é no tropeço da fala que o sujeito se escuta pela primeira vez.",
-          "Não há cura para o que somos, porque existir não é uma doença a ser erradicada. A análise não promete uma linha reta: ela abre espaço para sustentar o desvio."
-        ],
-        citation: "CALTRAM, Eduardo. Nota sobre a Inconstância como Ética. Inconstância Mental (@inconstancia_mental), nov. 2026."
+  function selectIntent(key) {
+    if (!templates[key] || !draft) return;
+    currentIntent = key;
+    $$('.intent-btn').forEach(button => {
+      const selected = button.dataset.intent === key;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
+    draft.value = templates[key];
+  }
+
+  function showFeedback(message) {
+    if (!feedback) return;
+    feedback.textContent = message;
+    feedback.hidden = false;
+    feedback.style.display = 'block';
+    clearTimeout(feedbackTimer);
+    feedbackTimer = setTimeout(() => {
+      feedback.hidden = true;
+      feedback.style.display = 'none';
+    }, 4500);
+  }
+
+  function fallbackCopy(value) {
+    const field = document.createElement('textarea');
+    field.value = value;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.append(field);
+    field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch { copied = false; }
+    field.remove();
+    return copied;
+  }
+
+  async function copyText(value) {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        return true;
       }
-    ];
+    } catch { /* Tenta a alternativa compatível com contextos sem Clipboard API. */ }
+    return fallbackCopy(value);
+  }
 
-    let currentFontSize = 1.06;
+  async function copyMessage() {
+    const copied = await copyText(draft?.value || '');
+    showFeedback(copied ? 'Mensagem copiada. Você pode colá-la no WhatsApp, Instagram ou e-mail.' : 'Não foi possível copiar automaticamente. Selecione e copie a mensagem manualmente.');
+  }
 
-    function openReader(index, updateHash = true) {
-      const item = essaysData[index];
-      if (!item) return;
+  function sendViaWhatsApp() {
+    const text = encodeURIComponent(draft?.value || '');
+    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${text}`, '_blank', 'noopener,noreferrer');
+  }
 
-      document.getElementById('modalMeta').textContent = item.meta;
-      document.getElementById('modalTitle').textContent = item.title;
-      document.getElementById('modalCitation').textContent = item.citation;
-      document.getElementById('copyCitationBtn').textContent = 'Copiar citação (ABNT)';
+  function sendViaEmail() {
+    const subject = encodeURIComponent(subjects[currentIntent] || subjects.formacao);
+    const body = encodeURIComponent(draft?.value || '');
+    window.location.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
+  }
 
-      const contentDiv = document.getElementById('modalContent');
-      contentDiv.innerHTML = item.paragraphs
-        .map(p => `<p style="font-size: ${currentFontSize}rem;">${p}</p>`)
-        .join('');
+  function openReader(index, updateHash = true, trigger = document.activeElement) {
+    const essay = essays[index];
+    if (!essay || !modal) return;
+    lastFocusedElement = trigger instanceof HTMLElement ? trigger : document.activeElement;
+    $('#modalMeta').textContent = essay.meta;
+    $('#modalTitle').textContent = essay.title;
+    $('#modalCitation').textContent = essay.citation;
+    $('#copyCitationBtn').textContent = 'Copiar citação (ABNT)';
 
-      document.getElementById('readerModal').classList.add('open');
-      document.body.style.overflow = 'hidden';
+    const content = $('#modalContent');
+    content.replaceChildren(...essay.paragraphs.map(text => {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = text;
+      paragraph.style.fontSize = `${currentFontSize}rem`;
+      return paragraph;
+    }));
 
-      if (updateHash && item.slug) {
-        history.replaceState(null, '', '#' + item.slug);
-      }
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    $('[data-action="reader-close"]', modal)?.focus();
+    if (updateHash) history.replaceState(null, '', `#${essay.slug}`);
+  }
+
+  function closeReader() {
+    if (!modal?.classList.contains('open')) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (/^#(ensaio|fragmento)-/.test(location.hash)) {
+      history.replaceState(null, '', location.pathname + location.search);
     }
+    if (lastFocusedElement?.isConnected) lastFocusedElement.focus();
+  }
 
-    function closeReader() {
-      document.getElementById('readerModal').classList.remove('open');
-      document.body.style.overflow = '';
-      if (window.location.hash.startsWith('#ensaio-') || window.location.hash.startsWith('#fragmento-')) {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-    }
+  function changeFontSize(delta) {
+    currentFontSize = Math.min(1.4, Math.max(.9, currentFontSize + delta * .08));
+    $$('#modalContent p').forEach(paragraph => {
+      paragraph.style.fontSize = `${currentFontSize}rem`;
+    });
+  }
 
-    function changeFontSize(delta) {
-      currentFontSize = Math.min(1.4, Math.max(0.9, currentFontSize + delta * 0.08));
-      document.querySelectorAll('#modalContent p').forEach(p => {
-        p.style.fontSize = currentFontSize + 'rem';
+  function toggleReaderTheme() { readerSheet?.classList.toggle('dark-paper'); }
+
+  async function copyCitation() {
+    const copied = await copyText($('#modalCitation')?.textContent || '');
+    const button = $('#copyCitationBtn');
+    if (!button) return;
+    button.textContent = copied ? 'Citação copiada ✓' : 'Falha ao copiar citação';
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => { button.textContent = 'Copiar citação (ABNT)'; }, 2500);
+  }
+
+  function activateTab(button, moveFocus = false) {
+    const panelId = `tab-${button.dataset.tab}`;
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+    $$('.tab-btn').forEach(tab => {
+      const selected = tab === button;
+      tab.classList.toggle('active', selected);
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    $$('.tab-panel').forEach(item => {
+      const selected = item === panel;
+      item.classList.toggle('active', selected);
+      item.hidden = !selected;
+    });
+    if (moveFocus) button.focus();
+  }
+
+  function handleTabKeys(event) {
+    const tabs = $$('.tab-btn');
+    const index = tabs.indexOf(event.target);
+    if (index < 0) return;
+    let next = index;
+    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+    else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = tabs.length - 1;
+    else return;
+    event.preventDefault();
+    activateTab(tabs[next], true);
+  }
+
+  function trapModalFocus(event) {
+    if (!modal?.classList.contains('open') || event.key !== 'Tab') return;
+    const focusable = $$('button:not([disabled]), a[href], textarea:not([disabled]), [tabindex]:not([tabindex="-1"])', modal)
+      .filter(element => element.getClientRects().length);
+    if (!focusable.length) { event.preventDefault(); modal.focus(); return; }
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
+
+  // Um único listener delegado mantém os controles dinâmicos e estáticos consistentes.
+  document.addEventListener('click', event => {
+    const target = event.target.closest('button');
+    if (!target) return;
+    if (target.matches('#menuToggle')) setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+    else if (target.matches('.intent-btn')) selectIntent(target.dataset.intent);
+    else if (target.matches('.tab-btn')) activateTab(target);
+    else if (target.matches('.filter-btn')) {
+      $$('.filter-btn').forEach(button => {
+        const selected = button === target;
+        button.classList.toggle('active', selected);
+        button.setAttribute('aria-pressed', String(selected));
       });
-    }
-
-    function toggleReaderTheme() {
-      document.getElementById('readerSheet').classList.toggle('dark-paper');
-    }
-
-    function copyCitation() {
-      const citation = document.getElementById('modalCitation').textContent;
-      const btn = document.getElementById('copyCitationBtn');
-      navigator.clipboard.writeText(citation).then(() => {
-        btn.textContent = 'Citação copiada ✓';
-        setTimeout(() => {
-          btn.textContent = 'Copiar citação (ABNT)';
-        }, 2500);
+      $$('.essay-card').forEach(card => {
+        card.hidden = target.dataset.filter !== 'all' && card.dataset.category !== target.dataset.filter;
       });
-    }
+    } else if (target.dataset.openReader !== undefined) openReader(Number(target.dataset.openReader), true, target);
+    else if (target.dataset.action === 'whatsapp') sendViaWhatsApp();
+    else if (target.dataset.action === 'email') sendViaEmail();
+    else if (target.dataset.action === 'copy-message') copyMessage();
+    else if (target.dataset.action === 'font-down') changeFontSize(-1);
+    else if (target.dataset.action === 'font-up') changeFontSize(1);
+    else if (target.dataset.action === 'reader-theme') toggleReaderTheme();
+    else if (target.dataset.action === 'reader-close') closeReader();
+    else if (target.dataset.action === 'copy-citation') copyCitation();
+  });
 
-    // Fechar leitor ao clicar fora da folha de leitura ou pressionar ESC
-    document.getElementById('readerModal').addEventListener('click', (e) => {
-      if (e.target.id === 'readerModal') closeReader();
-    });
+  menu?.addEventListener('click', event => {
+    if (event.target.closest('a')) setMenu(false);
+  });
+  window.addEventListener('scroll', schedulePageUpdate, { passive: true });
+  window.addEventListener('resize', schedulePageUpdate, { passive: true });
+  $('.tabs-nav')?.addEventListener('keydown', handleTabKeys);
+  modal?.addEventListener('click', event => { if (event.target === modal) closeReader(); });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeReader();
+    trapModalFocus(event);
+  });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeReader();
-    });
-
-    // Abrir ensaio automaticamente se a URL tiver o hash correspondente
-    window.addEventListener('DOMContentLoaded', () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash) {
-        const idx = essaysData.findIndex(e => e.slug === hash);
-        if (idx !== -1) {
-          openReader(idx, false);
-        }
-      }
-    });
-  </script>
+  const initialHash = location.hash.slice(1);
+  const initialEssay = essays.findIndex(essay => essay.slug === initialHash);
+  if (initialEssay >= 0) openReader(initialEssay, false);
+  updatePage();
+})();
+</script>
 </body>
 </html>
